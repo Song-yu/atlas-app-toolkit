@@ -1,11 +1,11 @@
 # Absolute github repository name.
-REPO := github.com/infobloxopen/atlas-app-toolkit
+REPO := github.com/Song-yu/atlas-app-toolkit
 
 # Build directory absolute path.
 PROJECT_ROOT = $(CURDIR)
 
 # Utility docker image to generate Go files from .proto definition.
-# https://github.com/infobloxopen/atlas-gentool
+# https://github.com/Song-yu/atlas-gentool
 GENTOOL_IMAGE := infoblox/atlas-gentool:latest
 
 .PHONY: default

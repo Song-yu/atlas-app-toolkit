@@ -12,8 +12,8 @@ import (
 
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 
-	"github.com/infobloxopen/atlas-app-toolkit/rpc/errdetails"
-	"github.com/infobloxopen/atlas-app-toolkit/rpc/errfields"
+	"github.com/Song-yu/atlas-app-toolkit/rpc/errdetails"
+	"github.com/Song-yu/atlas-app-toolkit/rpc/errfields"
 )
 
 // ProtoStreamErrorHandlerFunc handles the error as a gRPC error generated via status package and replies to the testRequest.
@@ -21,7 +21,7 @@ import (
 type ProtoStreamErrorHandlerFunc func(context.Context, bool, *runtime.ServeMux, runtime.Marshaler, http.ResponseWriter, *http.Request, error)
 
 // RestError represents an error in accordance with REST API Syntax Specification.
-// See: https://github.com/infobloxopen/atlas-app-toolkit#errors
+// See: https://github.com/Song-yu/atlas-app-toolkit#errors
 type RestError struct {
 	Status  *RestStatus   `json:"error,omitempty"`
 	Details []interface{} `json:"details,omitempty"`

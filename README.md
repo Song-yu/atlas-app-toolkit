@@ -1,6 +1,6 @@
 # API Toolkit
 
-[![Build Status](https://img.shields.io/travis/infobloxopen/atlas-app-toolkit/master.svg?label=build)](https://travis-ci.org/infobloxopen/atlas-app-toolkit)
+[![Build Status](https://img.shields.io/travis/Song-yu/atlas-app-toolkit/master.svg?label=build)](https://travis-ci.org/Song-yu/atlas-app-toolkit)
 
 1. [Getting Started](#getting-started)
     1. [Plugins](#plugins)
@@ -41,7 +41,7 @@ forwards incoming HTTP requests to gRPC services
 
 ### Initializing your Application
 
-To get started with the toolkit, check out the [Atlas CLI](https://github.com/infobloxopen/atlas-cli) repository. The Atlas CLI's "bootstrap command" can generate new applications that make use of the toolkit. For Atlas newcomers, this is a great way to get up-to-speed with toolkit best practices.
+To get started with the toolkit, check out the [Atlas CLI](https://github.com/Song-yu/atlas-cli) repository. The Atlas CLI's "bootstrap command" can generate new applications that make use of the toolkit. For Atlas newcomers, this is a great way to get up-to-speed with toolkit best practices.
 
 ### Plugins
 
@@ -113,7 +113,7 @@ The created transaction is stored in `context.Context` and passed to the request
 
 ```go
 import (
-	"github.com/infobloxopen/atlas-app-toolkit/gorm"
+	"github.com/Song-yu/atlas-app-toolkit/gorm"
 )
 
 func (s *MyService) MyMethod(ctx context.Context, req *MyMethodRequest) (*MyMethodResponse, error) {
@@ -146,7 +146,7 @@ You can enable support of Request-Id middleware in your gRPC-Server by adding
 import (
   ...
   ...
-  "github.com/infobloxopen/atlas-app-toolkit/requestid"
+  "github.com/Song-yu/atlas-app-toolkit/requestid"
 )
 func main() {
     server := grpc.NewServer(
@@ -270,8 +270,8 @@ message MyMessage {
 
 For more Swagger options see [this scheme](https://github.com/grpc-ecosystem/grpc-gateway/blob/master/protoc-gen-swagger/options/openapiv2.proto)
 
-See example [contacts app](https://github.com/infobloxopen/atlas-contacts-app/blob/master/pkg/pb/contacts.proto).
-Here is a [generated Swagger schema](https://github.com/infobloxopen/atlas-contacts-app/blob/master/pkg/pb/contacts.swagger.json).
+See example [contacts app](https://github.com/Song-yu/atlas-contacts-app/blob/master/pkg/pb/contacts.proto).
+Here is a [generated Swagger schema](https://github.com/Song-yu/atlas-contacts-app/blob/master/pkg/pb/contacts.swagger.json).
 
 **NOTE** [Well Known Types](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf) are
 generated in a bit unusual way:
@@ -287,7 +287,7 @@ generated in a bit unusual way:
 ### Build Image
 
 For convenience purposes there is an atlas-gentool image available which contains a pre-installed set of often used plugins.
-For more details see [infobloxopen/atlas-gentool](https://github.com/infobloxopen/atlas-gentool) repository.
+For more details see [Song-yu/atlas-gentool](https://github.com/Song-yu/atlas-gentool) repository.
 
 ### Server Wrapper
 
@@ -314,11 +314,11 @@ You can see a full example [here](server/server_example_test.go).
 ## Database Migrations
 
 The toolkit does not require any specific method for database provisioning and setup.
-However, if [golang-migrate](https://github.com/golang-migrate/migrate) or the [infobloxopen fork](https://github.com/infobloxopen/migrate) of it is used, a couple helper functions are provided [here](gorm/version.go) for verifying that the database version matches a required version without having to import the entire migration package.
+However, if [golang-migrate](https://github.com/golang-migrate/migrate) or the [Song-yu fork](https://github.com/Song-yu/migrate) of it is used, a couple helper functions are provided [here](gorm/version.go) for verifying that the database version matches a required version without having to import the entire migration package.
 
 ## Example
 
-An example app that is based on api-toolkit can be found [here](https://github.com/infobloxopen/atlas-contacts-app)
+An example app that is based on api-toolkit can be found [here](https://github.com/Song-yu/atlas-contacts-app)
 
 ## REST API Syntax Specification
 
@@ -398,7 +398,7 @@ Also you can use our helper function `gateway.Header()`
 import (
     "context"
 
-    "github.com/infobloxopen/atlas-app-toolkit/gateway"
+    "github.com/Song-yu/atlas-app-toolkit/gateway"
 )
 
 func (s *myServiceImpl) MyMethod(ctx context.Context, req *MyRequest) (*MyResponse, error) {
@@ -460,7 +460,7 @@ See [this article](https://github.com/grpc-ecosystem/grpc-gateway/wiki/How-to-cu
 
 ```
 import (
-	"github.com/infobloxopen/atlas-app-toolkit/gw"
+	"github.com/Song-yu/atlas-app-toolkit/gw"
 )
 
 func init() {
@@ -468,7 +468,7 @@ func init() {
 }
 ```
 
-You can also refer [example app](https://github.com/github.com/infobloxopen/atlas-contacts-app/pb/contacts/contacts.overwrite.pb.gw.go)
+You can also refer [example app](https://github.com/github.com/Song-yu/atlas-contacts-app/pb/contacts/contacts.overwrite.pb.gw.go)
 
 #### Which forwarders I need to use to comply our REST API?
 
@@ -494,7 +494,7 @@ Also you may use shortcuts like: `SetCreated`, `SetUpdated` and `SetDeleted`.
 
 ```golang
 import (
-    "github.com/infobloxopen/atlas-app-toolkit/gateway"
+    "github.com/Song-yu/atlas-app-toolkit/gateway"
 )
 
 func (s *myService) MyMethod(req *MyRequest) (*MyResponse, error) {
@@ -662,7 +662,7 @@ How to use [gateway.DefaultProtoErrorHandler](gateway/errors.go#L25) see example
 ```golang
 import (
     "github.com/grpc-ecosystem/grpc-gateway/runtime"
-    "github.com/infobloxopen/atlas-app-toolkit/gw"
+    "github.com/Song-yu/atlas-app-toolkit/gw"
 
     "github.com/yourrepo/yourapp"
 )
@@ -714,7 +714,7 @@ import (
     "google.golang.org/grpc/codes"
     "google.golang.org/grpc/status"
 
-    "github.com/infobloxopen/atlas-app-toolkit/errors"
+    "github.com/Song-yu/atlas-app-toolkit/errors"
 )
 
 func (s *myServiceImpl) MyMethod(req *MyRequest) (*MyResponse, error) {
@@ -830,7 +830,7 @@ a `runtime.ServeMuxOption` using `runtime.WithMetadata(gateway.MetadataAnnotator
 ```golang
 import (
     "github.com/grpc-ecosystem/grpc-gateway/runtime"
-    "github.com/infobloxopen/atlas-app-toolkit/gateway"
+    "github.com/Song-yu/atlas-app-toolkit/gateway"
 
     "github.com/yourrepo/yourapp"
 )
@@ -853,7 +853,7 @@ If you want to explicitly declare one of collection operators in your `proto`
 scheme, to do so just import `collection_operators.proto`.
 
 ```proto
-import "github.com/infobloxopen/atlas-app-toolkit/query/collection_operators.proto";
+import "github.com/Song-yu/atlas-app-toolkit/query/collection_operators.proto";
 
 message MyRequest {
     infoblox.api.Sorting sorting = 1;
@@ -928,7 +928,7 @@ appropriate metadata keys that will be handled by `grpc-gateway`. See example be
 ##### How to define field selection in my request?
 
 ```proto
-import github.com/infobloxopen/atlas-app-toolkit/query/collection_operators.proto;
+import github.com/Song-yu/atlas-app-toolkit/query/collection_operators.proto;
 
 message MyRequest {
     infoblox.api.FieldSelection fields = 1;
@@ -946,7 +946,7 @@ A service may implement collection sorting. A collection of response resources c
 ##### How to define sorting in my request?
 
 ```proto
-import github.com/infobloxopen/atlas-app-toolkit/query/collection_operators.proto;
+import github.com/Song-yu/atlas-app-toolkit/query/collection_operators.proto;
 
 message MyRequest {
     infoblox.api.Sorting sort = 1;
@@ -962,8 +962,8 @@ has not been specified in an incoming HTTP request `gateway.Sorting` returns `ni
 import (
     "context"
 
-    "github.com/infobloxopen/atlas-app-toolkit/gateway"
-    "github.com/infobloxopen/atlas-app-toolkit/query"
+    "github.com/Song-yu/atlas-app-toolkit/gateway"
+    "github.com/Song-yu/atlas-app-toolkit/query"
 )
 
 func (s *myServiceImpl) MyMethod(ctx context.Context, req *MyRequest) (*MyResponse, error) {
@@ -1020,7 +1020,7 @@ Note: if you decide to use toolkit provided `infoblox.api.Filtering` proto type,
 ##### How to define filtering in my request?
 
 ```proto
-import github.com/infobloxopen/atlas-app-toolkit/query/collection_operators.proto;
+import github.com/Song-yu/atlas-app-toolkit/query/collection_operators.proto;
 
 message MyRequest {
     infoblox.api.Filtering filter = 1;
@@ -1065,7 +1065,7 @@ Note: Response offsets are optional since the client can often keep state on the
 ##### How to define pagination in my request/response?
 
 ```proto
-import github.com/infobloxopen/atlas-app-toolkit/query/collection_operators.proto;
+import github.com/Song-yu/atlas-app-toolkit/query/collection_operators.proto;
 
 message MyRequest {
     infoblox.api.Pagination paging = 1;

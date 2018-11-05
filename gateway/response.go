@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/infobloxopen/atlas-app-toolkit/util"
+	"github.com/Song-yu/atlas-app-toolkit/util"
 	"io"
 	"net/http"
 	"strconv"
@@ -26,7 +26,7 @@ type (
 // ResponseForwarder implements ForwardResponseMessageFunc in method ForwardMessage
 // and ForwardResponseStreamFunc in method ForwardStream
 // in accordance with REST API Syntax Specification.
-// See: https://github.com/infobloxopen/atlas-app-toolkit#responses
+// See: https://github.com/Song-yu/atlas-app-toolkit#responses
 // for format of JSON response.
 type ResponseForwarder struct {
 	OutgoingHeaderMatcher runtime.HeaderMatcherFunc

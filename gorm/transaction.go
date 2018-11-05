@@ -5,7 +5,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/infobloxopen/atlas-app-toolkit/rpc/errdetails"
+	"github.com/Song-yu/atlas-app-toolkit/rpc/errdetails"
 	"github.com/jinzhu/gorm"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

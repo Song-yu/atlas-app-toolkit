@@ -3,7 +3,7 @@ package gateway
 import (
 	"context"
 	"encoding/json"
-	"github.com/infobloxopen/atlas-app-toolkit/query"
+	"github.com/Song-yu/atlas-app-toolkit/query"
 	"io"
 	"net/http"
 	"net/http/httptest"

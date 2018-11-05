@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/infobloxopen/atlas-app-toolkit/query"
-	"github.com/infobloxopen/atlas-app-toolkit/rpc/resource"
+	"github.com/Song-yu/atlas-app-toolkit/query"
+	"github.com/Song-yu/atlas-app-toolkit/rpc/resource"
 )
 
 type Entity struct {
